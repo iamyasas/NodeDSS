@@ -1,0 +1,33 @@
+==> Operations ==> get resource paths, verb & query name
+
+Add below
+
+server.get('/Employee', getAllEmp);
+server.get('/Employee/:id', getEmpById);
+
+
+server.get -- if verb is GET
+resource path as is
+query name is function name if only one exists(if more have to combine two names)
+
+create functions definition
+
+function getAllEmp(req, res, next) {
+	//get connection accordingly and open it
+
+	//call query or queries for the connection assign results to an array
+
+	connection.query('SELECT * from emp where id = ?', [req.params.id], function(err, results, fields){
+			sendResults(err, results, fields, res)
+	});
+
+	//close the connection
+
+	(if more connections)
+
+	//get connection accordingly and open it
+
+	//call query or queries for the connection assign results to the same array
+
+	//close the connection
+}

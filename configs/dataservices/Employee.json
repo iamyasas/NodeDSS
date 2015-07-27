@@ -1,0 +1,56 @@
+{
+    "operation": [
+        {
+            "query": [
+                {
+                    "name": "getAllEmp",
+                    "params": []
+                }
+            ],
+            "resourcePath": "/Employee",
+            "template": {
+                "_comment": "Root node is Employee",
+                "name": "singleQuery",
+                "params": [
+                    "Employees"
+                ]
+            },
+            "verb": "GET"
+        },
+        {
+            "query": [
+                {
+                    "name": "getEmpById",
+                    "params": [
+                        "id"
+                    ]
+                }
+            ],
+            "resourcePath": "/Employee/:id",
+            "template": {
+                "_comment": "Root node is Employee",
+                "name": "singleQuery",
+                "params": [
+                    "Employees"
+                ]
+            },
+            "verb": "GET"
+        }
+    ],
+    "query": {
+        "getAllEmp": {
+            "dataSource": "localMysql",
+            "params": [],
+            "sql": "select * from Employee",
+            "type": "simple"
+        },
+        "getEmpById": {
+            "dataSource": "localMysql",
+            "params": [
+                "id"
+            ],
+            "sql": "select * from Employee where id = ?",
+            "type": "simple"
+        }
+    }
+}
