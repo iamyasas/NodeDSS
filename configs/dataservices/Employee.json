@@ -41,7 +41,7 @@
         "getAllEmp": {
             "dataSource": "localMysql",
             "params": [],
-            "sql": "select * from Employee",
+            "sql": "select * from emp",
             "type": "simple"
         },
         "getEmpById": {
@@ -49,7 +49,7 @@
             "params": [
                 "id"
             ],
-            "sql": "select * from Employee where id = ?",
+            "sql": "select * from emp where id = ?",
             "type": "simple"
         }
     }
